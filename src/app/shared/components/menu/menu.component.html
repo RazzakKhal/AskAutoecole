@@ -1,0 +1,35 @@
+<div #menu class="container">
+  <ul class="list-menu">
+    <li>
+      <a [routerLink]="['/']" (click)="showMenuSub()">Accueil</a>
+      </li>
+    <li *ngIf="router.url === '/' || router.url === '/#ancreFormule' || router.url === '/#ancreMoniteur' ">
+      <!-- ancre si on est sur la page d'accueil -->
+    <a href="#ancreFormule" (click)="showMenuSub()">Nos Formules</a>
+    </li>
+    <li *ngIf="router.url === '/' || router.url === '/#ancreFormule' || router.url === '/#ancreMoniteur' ">
+      <!-- ancre si on est sur la page d'accueil -->
+      <a href="#ancreMoniteur" (click)="showMenuSub()">Nos Moniteurs</a>
+    </li>
+
+    <li *ngIf="!isConnected">
+      <!-- si on est pas connecté -->
+      <a [routerLink]="['/connexion']" (click)="showMenuSub()">Connexion</a>
+    </li>
+    <li *ngIf="!isConnected">
+      <!-- si on est pas connecté -->
+
+      <a [routerLink]="['/inscription']" (click)="showMenuSub()">Inscription</a>
+    </li>
+    <li *ngIf="isConnected">
+      <!-- si on est connecté -->
+
+      <a [routerLink]="['/planning']" (click)="showMenuSub()">Mon planning</a>
+    </li>
+    <li *ngIf="isConnected">
+      <!-- si on est connecté -->
+      <a [routerLink]="['/reserver']" (click)="showMenuSub()">Réserver</a>
+    </li>
+  </ul>
+
+</div>

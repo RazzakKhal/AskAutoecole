@@ -1,0 +1,25 @@
+.container{
+  background-color: black;
+  height : 10vh;
+  font-family: var(--family);
+  display: flex;
+  align-items: center;
+
+}
+ul{
+  display : flex;
+  list-style: none;
+  color : rgba(224, 185, 94, 1);
+  justify-content: space-around;
+  width: 100vw;
+
+}
+
+a{
+  text-decoration: none;
+  color : rgba(224, 185, 94, 1);
+
+}
+
+
+

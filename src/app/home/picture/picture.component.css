@@ -1,0 +1,33 @@
+.container{
+  width : 100vw;
+  height : 60vh;
+  background-image: url('../../../assets/images/background_ask.png');
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding-right: 0px;
+
+}
+
+.blackup{
+  z-index: 3;
+  height : 3vh;
+  width: 100vw;
+  background-color: black;
+  position: absolute;
+  top:0;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border : 0px solid black;
+}
+.whitedown{
+  z-index: 3;
+  height : 5vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  bottom:0;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+
+}

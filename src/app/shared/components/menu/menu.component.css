@@ -1,0 +1,34 @@
+.container{
+  height : 88vh;
+  background-color: black;
+  position: fixed;
+  bottom : 0px;
+  right : -100%;
+  z-index: 4;
+  width: 100%;
+  opacity: 0;
+  transition: all ease-in-out 1s;
+}
+
+.container ul{
+  height : 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.container ul li a{
+  color : var(--gold3);
+  text-decoration: none;
+  font-size: 2em;
+  font-family: var(--family);
+  letter-spacing: 4px;
+}
+
+.showMenu{
+  right : 0;
+  opacity: 1;
+}

@@ -1,0 +1,55 @@
+.container{
+  height : 12vh;
+  border: 1px solid;
+  display : flex;
+  justify-content: space-between;
+  background-color: black;
+  box-sizing: border-box;
+  padding-top: 8px;
+  padding-left: 10px;
+  position: fixed;
+  top:0px;
+  left: 0px;
+  z-index: 5;
+  width: 100%;
+}
+
+.menu-hidden{
+
+  display: flex;
+  flex-direction: column;
+  height : 25px;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-right: 25px;
+}
+
+span{
+  border : 1.5px solid rgba(224, 185, 94, 1);
+  width : 30px;
+  transition: all ease 1s;
+
+}
+
+.logo{
+  height : 80px;
+  width : 80px;
+}
+
+.ask{
+
+  height : 80px;
+}
+
+.rotateBarre{
+  transform : rotate(-90deg) translateX(-12px);
+}
+
+.clearOpacity{
+  opacity: 0;
+  width : 0px;
+}
+
+.crossRotate{
+  transform: rotate(45deg) translateX(12px);
+}
