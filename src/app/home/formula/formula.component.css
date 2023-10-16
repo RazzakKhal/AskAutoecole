@@ -1,19 +1,9 @@
-.container{
-  width: 100vw;
-  background-color: black;
-  display : flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  position: relative;
-  z-index: 1;
-}
 
 .formule1{
-  height : 40vh;
-  width : 80%;
+  height : 55vh;
+  width : 90vw;
+  margin-left: 5px;
+  margin-right: 5px;
   background: linear-gradient(var(--gold), var(--gold2), var(--gold3));
   border-radius: 10px;
   margin-bottom: 15px;
@@ -24,22 +14,9 @@
   padding-top: 10px;
   box-sizing: border-box;
   padding-bottom: 10px;
-}
-
-.formule2{
-  height : 40vh;
-  width : 80%;
-  background: linear-gradient(var(--gold), var(--gold2), var(--gold3));
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  box-sizing: border-box;
-  padding-bottom: 10px;
 
 }
+
 
 .cont1{
   height: 20%;
@@ -62,32 +39,10 @@
   color : white;
 }
 
-.whiteup{
-  z-index: 3;
-  height : 3vh;
-  width: 100vw;
-  background-color: white;
-  position: absolute;
-  top:0;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-}
-
-.whitedown{
-  z-index: 3;
-  height : 3vh;
-  width: 100vw;
-  background-color: white;
-  position: absolute;
-  bottom:0;
-  border-top-right-radius: 50%;
-  border-top-left-radius: 50%;
-}
 
 .reserver{
   border-radius: 10px;
   min-width: 40%;
-  height : 20%;
   font-family: var(--family);
   font-size: 1.8em;
   background-color: black;

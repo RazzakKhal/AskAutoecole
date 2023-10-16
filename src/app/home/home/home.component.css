@@ -1,0 +1,41 @@
+.container{
+  min-width: 100vw;
+  background-color: black;
+  display : flex;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.formules{
+  position: relative;
+  transition: all linear 0.5s;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left : 10px;
+}
+
+.whiteup{
+  z-index: 3;
+  height : 3vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  top:0;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.whitedown{
+  z-index: 3;
+  height : 3vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  bottom:0;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
