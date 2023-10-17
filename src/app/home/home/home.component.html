@@ -3,10 +3,16 @@
 <div id="ancreFormule" class="container">
   <div class="whiteup">
   </div>
-  <div class="formules" #formules>
+  <div class="fleche" (click)="goToNextFormule()"></div>
+  <div class="formules" #formules (click)="stopMoving()">
     <app-formula titre="Formule 20H" #formule1></app-formula>
-    <app-formula titre="Formule 13H" #formule2></app-formula>
-    <app-formula titre="A la carte" #formule3></app-formula>
+    <app-formula titre="Formule 20H Etudiant" #formule2></app-formula>
+    <app-formula titre="Formule 20H AAC" #formule3></app-formula>
+    <app-formula titre="Formule 13H" #formule4></app-formula>
+    <app-formula titre="Formule 10H" #formule5></app-formula>
+    <app-formula titre="Formule 10H Automatique" #formule6></app-formula>
+    <app-formula titre="1H" #formule7></app-formula>
+    <app-formula titre="1H Auto" #formule8></app-formula>
   </div>
     <div class="whitedown">
     </div>

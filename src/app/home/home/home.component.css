@@ -12,10 +12,21 @@
 
 .formules{
   position: relative;
-  transition: all linear 0.5s;
+  transition: all linear 0.25s;
   display: flex;
   flex-wrap: nowrap;
   padding-left : 10px;
+}
+
+.fleche{
+  position: absolute;
+  background-image: url('../../../assets/images/fleche.png');
+  background-size: contain;
+  z-index: 3;
+  height: 50px;
+  width: 50px;
+  right: 5px;
+  animation: 3s linear 1s infinite alternate opaci;
 }
 
 .whiteup{
@@ -38,4 +49,10 @@
   bottom:0;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
+}
+
+
+@keyframes opaci {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
 }
