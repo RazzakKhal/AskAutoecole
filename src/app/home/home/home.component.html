@@ -1,17 +1,28 @@
 <app-picture></app-picture>
 <app-advantage></app-advantage>
 <div id="ancreFormule" class="container">
+  <div class="fleched1" (click)="goToNextFormule()"></div>
+  <div class="fleched2" (click)="goToNextFormule2()"></div>
+  <div class="flecheg1" #flecheg1 (click)="goToPreviousFormule()"></div>
+  <div class="flecheg2" #flecheg2 (click)="goToPreviousFormule2()"></div>
   <div class="whiteup">
   </div>
-  <div class="fleche" (click)="goToNextFormule()"></div>
-  <div class="formules" #formules (click)="stopMoving()">
+    <p class="titreFormule">
+      <img class="voiture" src="../../../assets/images/voiture.png" alt="voiture qui roule de gauche à droite">
+      Les Formules Manuelles</p>
+  <div class="formules" #formules>
     <app-formula titre="Formule 20H" #formule1></app-formula>
     <app-formula titre="Formule 20H Etudiant" #formule2></app-formula>
-    <app-formula titre="Formule 20H AAC" #formule3></app-formula>
     <app-formula titre="Formule 13H" #formule4></app-formula>
     <app-formula titre="Formule 10H" #formule5></app-formula>
-    <app-formula titre="Formule 10H Automatique" #formule6></app-formula>
     <app-formula titre="1H" #formule7></app-formula>
+  </div>
+  <p class="titreFormule titreFormule2">
+    <img class="voiture2" src="../../../assets/images/voiture2.png" alt="voiture qui roule de droite à gauche">
+    Les Formules Automatiques</p>
+  <div class="formules2" #formules2>
+    <app-formula titre="Formule 20H AAC" #formule3></app-formula>
+    <app-formula titre="Formule 10H Automatique" #formule6></app-formula>
     <app-formula titre="1H Auto" #formule8></app-formula>
   </div>
     <div class="whitedown">

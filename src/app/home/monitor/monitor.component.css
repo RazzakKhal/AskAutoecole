@@ -8,10 +8,16 @@
 }
 
 img{
-  height: 250px;
+  height: 0px;
   width: 250px;
   border-radius: 50%;
   filter: grayscale(100%);
+  transition: all linear 0.5s;
+
+}
+
+.active{
+  height : 250px;
 }
 section{
   box-sizing: border-box;

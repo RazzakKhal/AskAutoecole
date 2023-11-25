@@ -1,33 +1,87 @@
 .container{
   min-width: 100vw;
   background-color: black;
-  display : flex;
   align-items: center;
   padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  transition: all linear 0.5s;
+
 }
+
+
+
 
 .formules{
   position: relative;
-  transition: all linear 0.25s;
+  transition: all linear 0.5s;
   display: flex;
   flex-wrap: nowrap;
   padding-left : 10px;
+  opacity: 0;
 }
 
-.fleche{
+.formules2{
+  position: relative;
+  transition: all linear 0.5s;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left : 10px;
+  opacity: 0;
+}
+.fleched1{
   position: absolute;
-  background-image: url('../../../assets/images/fleche.png');
+  background-image: url('../../../assets/images/right.png');
   background-size: contain;
   z-index: 3;
   height: 50px;
   width: 50px;
-  right: 5px;
-  animation: 3s linear 1s infinite alternate opaci;
+  right: 11px;
+  top : 350px;
+  animation: 1.5s linear 1s infinite alternate opaci;
 }
+
+.fleched2{
+  position: absolute;
+  background-image: url('../../../assets/images/right.png');
+  background-size: contain;
+  z-index: 3;
+  height: 50px;
+  width: 50px;
+  right: 11px;
+  top : 900px;
+  animation: 1.5s linear 1s infinite alternate opaci;
+}
+.flecheg1{
+  position: absolute;
+  background-image: url('../../../assets/images/left.png');
+  background-size: contain;
+  z-index: 3;
+  height: 0px;
+  width: 50px;
+  left: 5px;
+  top : 350px;
+  animation: 1.5s linear 1s infinite alternate opaci;
+  transition: all linear 0.2s;
+
+}
+
+.flecheg2{
+  position: absolute;
+  background-image: url('../../../assets/images/left.png');
+  background-size: contain;
+  z-index: 3;
+  height: 0px;
+  width: 50px;
+  left: 5px;
+  top : 900px;
+  animation: 1.5s linear 1s infinite alternate opaci;
+  transition: all linear 0.2s;
+
+}
+
 
 .whiteup{
   z-index: 3;
@@ -51,8 +105,65 @@
   border-top-left-radius: 50%;
 }
 
+.titreFormule{
+  position: relative;
+  left : 0px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color : white;
+  width : 100vw;
+  font-family: var(--family);
+  font-size: 1.4em;
+}
 
+.titreFormule2{
+  padding-top : 30px;
+}
+
+.voiture{
+  position: relative;
+  left : -80px;
+  height : 50px;
+  animation: 5s linear 1s infinite drive;
+}
+
+.voiture2{
+  position: relative;
+  left : 600px;
+  height : 50px;
+  animation: 5s linear 1s infinite drive2;
+}
+
+.active{
+  opacity: 1;
+}
 @keyframes opaci {
-  from { opacity: 0.5; }
-  to   { opacity: 1; }
+  from { opacity: 0.5;
+         transform : scale(1);
+  }
+  to   { opacity: 1;
+    transform : scale(1.4);
+      }
+}
+
+@keyframes drive{
+  from{
+    left : -80px;
+    transform: rotate(0deg);
+  }
+  to{
+    left : 600px;
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes drive2{
+  from{
+    left : 600px;
+    transform: rotate(0deg);
+  }
+  to{
+    left : -80px;
+    transform: rotate(-15deg);
+  }
 }
