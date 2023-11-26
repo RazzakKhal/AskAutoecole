@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   divToDuplicate = 1;
 
   right2 = 0;
-  divToDuplicate2 = 3;
+  divToDuplicate2 = 1;
 
   ngOnInit(): void {
   }
@@ -143,8 +143,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   window.addEventListener('scroll', () => {
 
     const {scrollTop, clientHeight} = document.documentElement;
-
-    // console.log(scrollTop, clientHeight);
 
     const topElementToTopViewport = formules1.getBoundingClientRect().top;
     const topElementToTopViewport2 = formules2.getBoundingClientRect().top;

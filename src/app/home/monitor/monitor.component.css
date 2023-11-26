@@ -16,8 +16,17 @@ img{
 
 }
 
+.so{
+  height : 250px;
+  opacity: 0;
+}
+
 .active{
   height : 250px;
+}
+
+.active2{
+  opacity: 1;
 }
 section{
   box-sizing: border-box;

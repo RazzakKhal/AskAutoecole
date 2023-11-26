@@ -30,9 +30,8 @@ export class MonitorComponent implements AfterViewInit{
       const topElementToTopViewport = soso.getBoundingClientRect().top;
       const topElementToTopViewport2 = papa.getBoundingClientRect().top;
 
-      console.log(topElementToTopViewport)
       if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.8){
-          soso.classList.add('active')
+          soso.classList.add('active2')
       }
       if(scrollTop > (scrollTop + topElementToTopViewport2).toFixed() - clientHeight * 0.8){
         papa.classList.add('active')
