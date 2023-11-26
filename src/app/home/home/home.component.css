@@ -114,6 +114,9 @@
   width : 100vw;
   font-family: var(--family);
   font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .titreFormule2{
@@ -125,6 +128,7 @@
   left : -80px;
   height : 50px;
   animation: 5s linear 1s infinite drive;
+  align-self: flex-start;
 }
 
 .voiture2{
@@ -132,6 +136,8 @@
   left : 600px;
   height : 50px;
   animation: 5s linear 1s infinite drive2;
+  align-self: flex-start;
+
 }
 
 .active{
