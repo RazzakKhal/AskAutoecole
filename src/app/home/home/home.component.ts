@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormulaComponent } from '../formula/formula.component';
+import { FORMULES_MARGIN, FORMULES_WIDTH } from 'src/app/shared/constantes/constantes';
 
 @Component({
   selector: 'app-home',
@@ -97,15 +98,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   goToNextFormule(){
     const fg1 = this.flecheg1.nativeElement;
     fg1.style.height = '50px';
-    this.right += 360;
+    this.right += FORMULES_WIDTH + FORMULES_MARGIN;
     this.addMargeToInfinity();
 
   }
 
   goToPreviousFormule(){
     const fg1 = this.flecheg1.nativeElement;
-    if(this.right >=360){
-      this.right -= 360;
+    if(this.right >= FORMULES_WIDTH + FORMULES_MARGIN){
+      this.right -= FORMULES_WIDTH + FORMULES_MARGIN;
       if(this.right === 0){
         fg1.style.height = '0px';
       }
@@ -116,15 +117,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   goToNextFormule2(){
     const fg2 = this.flecheg2.nativeElement;
     fg2.style.height = '50px';
-    this.right2 += 360;
+    this.right2 += FORMULES_WIDTH + FORMULES_MARGIN;
     this.addMargeToInfinity2();
 
   }
 
  goToPreviousFormule2(){
   const fg2 = this.flecheg2.nativeElement;
-  if(this.right2 >= 360){
-    this.right2 -= 360;
+  if(this.right2 >= FORMULES_WIDTH + FORMULES_MARGIN){
+    this.right2 -= FORMULES_WIDTH + FORMULES_MARGIN;
     if(this.right2 === 0){
       fg2.style.height = '0px';
     }
@@ -147,7 +148,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
     const topElementToTopViewport = formules1.getBoundingClientRect().top;
     const topElementToTopViewport2 = formules2.getBoundingClientRect().top;
 
-    console.log(topElementToTopViewport)
     if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.8){
         formules1.classList.add('active')
     }

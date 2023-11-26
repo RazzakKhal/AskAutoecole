@@ -1,7 +1,6 @@
 
 .formule1{
   height : 55vh;
-  width : 350px;
   margin-left: 5px;
   margin-right: 5px;
   background: linear-gradient(var(--gold), var(--gold2), var(--gold3));
