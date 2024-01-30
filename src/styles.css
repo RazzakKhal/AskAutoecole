@@ -2,14 +2,14 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant&family=Montserrat:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&family=Montserrat:ital@1&family=Roboto:wght@300&display=swap');
 
 :root {
  --gold: rgba(224, 185, 94, 1);
  --gold2: rgba(218,171,93,1);
  --gold3 : rgba(244,217,136,1);
  --family : 'Montserrat', sans-serif;
-
+ --family2 :'Roboto', sans-serif;;
 }
 
 html, body, div, span, applet, object, iframe,

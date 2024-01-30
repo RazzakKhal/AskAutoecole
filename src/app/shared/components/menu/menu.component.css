@@ -1,4 +1,9 @@
 .container{
+  height : 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   height : 88vh;
   background-color: black;
   position: fixed;
@@ -8,16 +13,18 @@
   width: 100%;
   opacity: 0;
   transition: all ease-in-out 1s;
+
 }
 
 .container ul{
-  height : 100%;
+  height : 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
   list-style: none;
+  padding-bottom: 50px;
 }
 
 .container ul li a{

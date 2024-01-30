@@ -12,11 +12,11 @@
       <a href="#ancreMoniteur" (click)="showMenuSub()">Nos Moniteurs</a>
     </li>
 
-    <li *ngIf="!isConnected">
+    <li *ngIf="isConnected">
       <!-- si on est pas connecté -->
       <a [routerLink]="['/connexion']" (click)="showMenuSub()">Connexion</a>
     </li>
-    <li *ngIf="!isConnected">
+    <li *ngIf="isConnected">
       <!-- si on est pas connecté -->
 
       <a [routerLink]="['/inscription']" (click)="showMenuSub()">Inscription</a>
@@ -30,6 +30,9 @@
       <!-- si on est connecté -->
       <a [routerLink]="['/reserver']" (click)="showMenuSub()">Réserver</a>
     </li>
+    <li>
+      <a href="#ancreContact" (click)="showMenuSub()">Contact</a>
+      </li>
   </ul>
 
 </div>

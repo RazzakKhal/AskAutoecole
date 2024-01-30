@@ -12,7 +12,7 @@ const routes: Routes = [
   {path : 'planning', component : PlanificationComponent},
   {path : 'reserver', component: ReserveaslotComponent},
   {path : 'connexion', component: SigninComponent},
-  {path : 'inscription', component: SignupComponent}
+  {path : 'inscription', component: SignupComponent},
 ];
 
 @NgModule({

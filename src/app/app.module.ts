@@ -32,7 +32,7 @@ import { ReserveaslotComponent } from './reserveaslot/reserveaslot.component';
     SigninComponent,
     SignupComponent,
     PlanificationComponent,
-    ReserveaslotComponent
+    ReserveaslotComponent,
   ],
   imports: [
     BrowserModule,

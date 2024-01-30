@@ -1,20 +1,56 @@
-.container{
-  height : 60vh;
-  width : 100vw;
+.main-container{
   padding-top: 50px;
   box-sizing: border-box;
+}
+
+.container{
+    height : 60vh;
+    width : 100vw;
+    box-sizing: border-box;
+    background-image: url('../../../assets/images/background-pourquoi-nous-choisir.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.text-container{
+  border-radius: 10px;
 }
 
 h2{
   text-align: center;
   font-family:var(--family);
   font-size: 1.5em;
+  padding-bottom : 20px;
+  text-shadow:
+  -1px -1px 0 #FFF,
+   1px -1px 0 #FFF,
+  -1px  1px 0 #FFF,
+   1px  1px 0 #FFF; /* Ombres créant l'effet de bordure */
 }
 
 p{
+  font-family: var(--family2);
   text-align:justify;
   padding: 10px;
   padding-top: 30px;
-  font-size: 20px;
+  font-size: 1em;
+  text-shadow:
+  -1px -1px 0 #FFF,
+   1px -1px 0 #FFF,
+  -1px  1px 0 #FFF,
+   1px  1px 0 #FFF; /* Ombres créant l'effet de bordure */
 
+
+}
+
+span{
+  display : inline-block;
+  font-size : 1.2em;
+  font-family: var(--family);
+  padding-bottom: 10px;
+}
+
+.final{
+  font-weight: 600;
+  font-size : 1.2em;
 }
