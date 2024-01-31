@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('mail', { read: ElementRef }) mail!: ElementRef;
   @ViewChild('message', { read: ElementRef }) message!: ElementRef;
   @ViewChild('formButton', { read: ElementRef }) formButton!: ElementRef;
-
+  @ViewChild('sendNotif', { read: ElementRef }) sendNotif!: ElementRef;
+  @ViewChild('failNotif', { read: ElementRef }) failNotif!: ElementRef;
 
 
 
@@ -179,16 +180,27 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
       message: `${message} envoyé par ${mail}`
   };
 
+
+
   emailjs.send('service_zpu9owq','template_3lq6vzn', templateParams, 'p6T7xer_3LM_gfyT2')
     .then((response) => {
-       console.log('SUCCESS!', response.status, response.text);
       this.nom.nativeElement.value = '';
       this.prenom.nativeElement.value='';
       this.message.nativeElement.value='';
       this.mail.nativeElement.value='';
+      this.sendNotif.nativeElement.classList.toggle('active');
+
+      setTimeout(() => {
+        this.sendNotif.nativeElement.classList.toggle('active');
+
+      }, 2000);
     }, (err) => {
-       console.log('FAILED...', err);
-    });
+      this.failNotif.nativeElement.classList.toggle('active');
+
+      setTimeout(() => {
+        this.failNotif.nativeElement.classList.toggle('active');
+
+      }, 2000);    });
   }
 
   ngOnDestroy(): void {
