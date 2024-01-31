@@ -33,20 +33,20 @@
   <form>
     <div>
       <label for="nom">Nom : </label>
-      <input type="text" id="nom" name="nom">
+      <input type="text" id="nom" name="nom" #nom>
     </div>
     <div>
       <label for="prenom">Prenom :</label>
-      <input type="text" id="prenom" name="prenom">
+      <input type="text" id="prenom" name="prenom" #prenom>
     </div>
     <div>
       <label for="mail">Mail :</label>
-      <input type="mail" id="mail" name="nom">
+      <input type="mail" id="mail" name="nom" #mail>
     </div>
     <div>
       <label for="message">Entre ton Message :</label>
-      <input type="textarea" id="message">
+      <textarea name="" id="message" cols="30" rows="6" #message></textarea>
     </div>
-    <button type="submit">Envoyer</button>
+    <button (click)="sendMail($event)" #formButton>Envoyer</button>
   </form>
 </div>

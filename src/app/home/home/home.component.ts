@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormulaComponent } from '../formula/formula.component';
 import { FORMULES_MARGIN, FORMULES_WIDTH } from 'src/app/shared/constantes/constantes';
+import emailjs from '@emailjs/browser';
+
 
 @Component({
   selector: 'app-home',
@@ -21,6 +23,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('formule8', { read: ElementRef }) formule8!: ElementRef;
   @ViewChild('flecheg1', { read: ElementRef }) flecheg1!: ElementRef;
   @ViewChild('flecheg2', { read: ElementRef }) flecheg2!: ElementRef;
+  @ViewChild('nom', { read: ElementRef }) nom!: ElementRef;
+  @ViewChild('prenom', { read: ElementRef }) prenom!: ElementRef;
+  @ViewChild('mail', { read: ElementRef }) mail!: ElementRef;
+  @ViewChild('message', { read: ElementRef }) message!: ElementRef;
+  @ViewChild('formButton', { read: ElementRef }) formButton!: ElementRef;
+
+
 
 
   right = 0;
@@ -156,6 +165,32 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   }
 })
   }
+
+
+  sendMail(event : Event){
+    event.preventDefault();
+    const nom = this.nom.nativeElement.value;
+    const prenom = this.prenom.nativeElement.value;
+    const mail = this.mail.nativeElement.value;
+    const message = this.message.nativeElement.value;
+
+    const templateParams = {
+      from_name: `${nom} ${prenom}`,
+      message: `${message} envoyé par ${mail}`
+  };
+
+  emailjs.send('service_zpu9owq','template_3lq6vzn', templateParams, 'p6T7xer_3LM_gfyT2')
+    .then((response) => {
+       console.log('SUCCESS!', response.status, response.text);
+      this.nom.nativeElement.value = '';
+      this.prenom.nativeElement.value='';
+      this.message.nativeElement.value='';
+      this.mail.nativeElement.value='';
+    }, (err) => {
+       console.log('FAILED...', err);
+    });
+  }
+
   ngOnDestroy(): void {
 
   }
