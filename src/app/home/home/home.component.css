@@ -174,10 +174,21 @@ label{
 button{
   margin-top: 10px;
   margin-bottom: 10px;
+  border-radius: 10px;
+  font-family: var(--family);
+  font-size: 1.8em;
+  background-color: black;
+  color : var(--gold);
+  padding: 15px;
+  border : 1px solid white;
 }
 
 [type="textarea"]{
   height : 60px;
+}
+
+input{
+  border-radius : 5px;
 }
 @keyframes opaci {
   from { opacity: 0.5;

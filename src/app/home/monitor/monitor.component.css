@@ -48,6 +48,8 @@ p{
   padding: 10px;
   padding-top: 20px;
   text-align: justify;
+  font-size : 1.2em;
+  font-family : var(--family2);
 }
 
 .blackdown{
