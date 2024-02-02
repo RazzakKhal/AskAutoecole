@@ -11,26 +11,22 @@
       <img class="voiture" src="../../../assets/images/voiture.png" alt="voiture qui roule de gauche à droite">
       Les Formules Manuelles</p>
   <div class="formules" #formules>
-    <app-formula titre="Formule 20H" #formule1></app-formula>
-    <app-formula titre="Formule 20H Etudiant" #formule2></app-formula>
-    <app-formula titre="Formule 13H" #formule4></app-formula>
-    <app-formula titre="Formule 10H" #formule5></app-formula>
-    <app-formula titre="1H" #formule7></app-formula>
+    <app-formula titre="Forfait B 20h" [description]="description" #formule1></app-formula>
+    <app-formula titre="Forfait AAC 20h (Dès 15 ans)" [description]="description2" #formule2></app-formula>
   </div>
   <p class="titreFormule titreFormule2">
     <img class="voiture2" src="../../../assets/images/voiture2.png" alt="voiture qui roule de droite à gauche">
     Les Formules Automatiques</p>
   <div class="formules2" #formules2>
-    <app-formula titre="Formule 20H AAC" #formule3></app-formula>
-    <app-formula titre="Formule 10H Automatique" #formule6></app-formula>
-    <app-formula titre="1H Auto" #formule8></app-formula>
+    <app-formula titre="Forfait AAC 20h (Dès 15 ans)" [description]="description3" #formule3></app-formula>
+    <app-formula titre="Formule 10H Automatique" [description]="description4" #formule6></app-formula>
   </div>
     <div class="whitedown">
     </div>
 </div>
 <app-monitor></app-monitor>
 <div class="formulaire">
-  <form>
+  <form id="ancreContact">
     <div>
       <label for="nom">Nom : </label>
       <input type="text" id="nom" name="nom" #nom>

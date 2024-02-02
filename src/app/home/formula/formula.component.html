@@ -4,9 +4,13 @@
       <p>{{titre}}</p>
     </div>
 
-    <p>
-      {{description}}
-    </p>
+
+      <ul>
+        <li *ngFor="let point of description">
+          {{point}}
+        </li>
+      </ul>
+
     <button class="reserver">
       Choisir
     </button>

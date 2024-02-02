@@ -10,7 +10,7 @@ export class FormulaComponent implements AfterViewInit{
 
 
 @Input() titre! : string;
-@Input() description! :string
+@Input() description! :string[]
 @ViewChild('formule1') formule! : ElementRef;
 
 ngAfterViewInit(): void {

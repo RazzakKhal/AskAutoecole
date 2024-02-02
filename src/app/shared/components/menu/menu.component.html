@@ -3,33 +3,30 @@
     <li>
       <a [routerLink]="['/']" (click)="showMenuSub()">Accueil</a>
       </li>
-    <li *ngIf="router.url === '/' || router.url === '/#ancreFormule' || router.url === '/#ancreMoniteur' ">
+    <!-- si besoin d'afficher sur url precise  *ngIf="router.url === '/' || router.url === '/#ancreFormule' || router.url === '/#ancreMoniteur' " -->
+    <li>
       <!-- ancre si on est sur la page d'accueil -->
     <a href="#ancreFormule" (click)="showMenuSub()">Nos Formules</a>
     </li>
-    <li *ngIf="router.url === '/' || router.url === '/#ancreFormule' || router.url === '/#ancreMoniteur' ">
+    <li>
       <!-- ancre si on est sur la page d'accueil -->
       <a href="#ancreMoniteur" (click)="showMenuSub()">Nos Moniteurs</a>
     </li>
 
-    <li *ngIf="isConnected">
-      <!-- si on est pas connecté -->
+    <!-- <li *ngIf="isConnected">
       <a [routerLink]="['/connexion']" (click)="showMenuSub()">Connexion</a>
     </li>
     <li *ngIf="isConnected">
-      <!-- si on est pas connecté -->
 
       <a [routerLink]="['/inscription']" (click)="showMenuSub()">Inscription</a>
-    </li>
-    <li *ngIf="isConnected">
-      <!-- si on est connecté -->
+    </li> -->
+    <!-- <li *ngIf="isConnected">
 
       <a [routerLink]="['/planning']" (click)="showMenuSub()">Mon planning</a>
     </li>
     <li *ngIf="isConnected">
-      <!-- si on est connecté -->
       <a [routerLink]="['/reserver']" (click)="showMenuSub()">Réserver</a>
-    </li>
+    </li> -->
     <li>
       <a href="#ancreContact" (click)="showMenuSub()">Contact</a>
       </li>

@@ -16,11 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('formule1', { read: ElementRef }) formule1!: ElementRef;
   @ViewChild('formule2', { read: ElementRef }) formule2!: ElementRef;
   @ViewChild('formule3', { read: ElementRef }) formule3!: ElementRef;
-  @ViewChild('formule4', { read: ElementRef }) formule4!: ElementRef;
-  @ViewChild('formule5', { read: ElementRef }) formule5!: ElementRef;
   @ViewChild('formule6', { read: ElementRef }) formule6!: ElementRef;
-  @ViewChild('formule7', { read: ElementRef }) formule7!: ElementRef;
-  @ViewChild('formule8', { read: ElementRef }) formule8!: ElementRef;
   @ViewChild('flecheg1', { read: ElementRef }) flecheg1!: ElementRef;
   @ViewChild('flecheg2', { read: ElementRef }) flecheg2!: ElementRef;
   @ViewChild('nom', { read: ElementRef }) nom!: ElementRef;
@@ -32,7 +28,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('failNotif', { read: ElementRef }) failNotif!: ElementRef;
 
 
-
+  description = ["Inscription ANTS", "Accès salle de code en illimité", "20 leçons de conduite", "Livret pédagogique dématérialisé",
+  "Accompagnement à l’examen pratique de la conduite", "1140€"];
+  description2 = ["Inscription ANTS", "Accès salle de code en illimité", "20 leçons de conduite", "Livret pédagogique dématérialisé",
+  "Accompagnement à l’examen pratique de la conduite","RDV pédagogique préalable avec l’accompagnateur (2h)", "2 RDV pédagogiques (2h)", "1299€"];
+  description3 = ["Inscription ANTS", "Accès salle de code en illimité", "20 leçons de conduite", "Livret pédagogique dématérialisé",
+   "Accompagnement à l’examen pratique de la conduite", "1199€"];
+   description4 = ["Inscription ANTS", "Accès salle de code en illimité", "13 leçons de conduite", "Livret pédagogique dématérialisé",
+   "Accompagnement à l’examen pratique de la conduite", "780€"];
   right = 0;
   divToDuplicate = 1;
 
@@ -51,9 +54,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
     const divToAddMarge = this.formules.nativeElement;
     const formule1 = this.formule1.nativeElement;
     const formule2 = this.formule2.nativeElement;
-    const formule4 = this.formule4.nativeElement;
-    const formule5 = this.formule5.nativeElement;
-    const formule7 = this.formule7.nativeElement;
+
 
     // j'ajoute en boucle de la position right
 
@@ -65,15 +66,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
           this.divToDuplicate = 2;
         }else if(this.divToDuplicate === 2){
           divToAddMarge.appendChild(formule2.cloneNode(true));
-          this.divToDuplicate = 3;
-        }else if(this.divToDuplicate === 3){
-          divToAddMarge.appendChild(formule4.cloneNode(true));
-          this.divToDuplicate = 4;
-        }else if(this.divToDuplicate === 4){
-          divToAddMarge.appendChild(formule5.cloneNode(true));
-          this.divToDuplicate = 5;
-        }else if(this.divToDuplicate === 5){
-          divToAddMarge.appendChild(formule7.cloneNode(true));
           this.divToDuplicate = 1;
         }
 
@@ -87,7 +79,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
     const divToAddMarge = this.formules2.nativeElement;
     const formule3 = this.formule3.nativeElement;
     const formule6 = this.formule6.nativeElement;
-    const formule8 = this.formule8.nativeElement;
 
       divToAddMarge.style.right = `${this.right2}px`
 
@@ -97,9 +88,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
           this.divToDuplicate2 = 2;
         }else if(this.divToDuplicate2 === 2){
           divToAddMarge.appendChild(formule6.cloneNode(true));
-          this.divToDuplicate2 = 3;
-        }else if(this.divToDuplicate2 === 3){
-          divToAddMarge.appendChild(formule8.cloneNode(true));
           this.divToDuplicate2 = 1;
         }
 

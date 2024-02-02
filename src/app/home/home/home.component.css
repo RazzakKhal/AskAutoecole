@@ -39,7 +39,7 @@
   height: 50px;
   width: 50px;
   right: 11px;
-  top : 350px;
+  top : 450px;
   animation: 1.5s linear 1s infinite alternate opaci;
 }
 
@@ -51,7 +51,7 @@
   height: 50px;
   width: 50px;
   right: 11px;
-  top : 900px;
+  top : 1250px;
   animation: 1.5s linear 1s infinite alternate opaci;
 }
 .flecheg1{
@@ -62,7 +62,7 @@
   height: 0px;
   width: 50px;
   left: 5px;
-  top : 350px;
+  top : 450px;
   animation: 1.5s linear 1s infinite alternate opaci;
   transition: all linear 0.2s;
 
@@ -76,7 +76,7 @@
   height: 0px;
   width: 50px;
   left: 5px;
-  top : 900px;
+  top : 1250px;
   animation: 1.5s linear 1s infinite alternate opaci;
   transition: all linear 0.2s;
 
