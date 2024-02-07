@@ -11,15 +11,15 @@
       <img class="voiture" src="../../../assets/images/voiture.png" alt="voiture qui roule de gauche à droite">
       Les Formules Manuelles</p>
   <div class="formules" #formules>
-    <app-formula titre="Forfait B 20h" [description]="description" #formule1></app-formula>
-    <app-formula titre="Forfait AAC 20h (Dès 15 ans)" [description]="description2" #formule2></app-formula>
+    <app-formula (fillMyForm)="fillForm($event)" titre="Forfait B 20h" [description]="description" #formule1></app-formula>
+    <app-formula (fillMyForm)="fillForm($event)" titre="Forfait AAC 20h (Dès 15 ans)" [description]="description2" #formule2></app-formula>
   </div>
   <p class="titreFormule titreFormule2">
     <img class="voiture2" src="../../../assets/images/voiture2.png" alt="voiture qui roule de droite à gauche">
     Les Formules Automatiques</p>
   <div class="formules2" #formules2>
-    <app-formula titre="Forfait AAC 20h (Dès 15 ans)" [description]="description3" #formule3></app-formula>
-    <app-formula titre="Formule 10H Automatique" [description]="description4" #formule6></app-formula>
+    <app-formula (fillMyForm)="fillForm($event)" titre="Formule B78 20H" [description]="description3" #formule3></app-formula>
+    <app-formula (fillMyForm)="fillForm($event)" titre="Formule B78 13H" [description]="description4" #formule6></app-formula>
   </div>
     <div class="whitedown">
     </div>
@@ -37,7 +37,11 @@
     </div>
     <div>
       <label for="mail">Mail :</label>
-      <input type="mail" id="mail" name="nom" #mail>
+      <input type="mail" id="mail" name="mail" #mail>
+    </div>
+    <div>
+      <label for="portable">Telephone :</label>
+      <input type="tel" id="portable" name="portable" #portable>
     </div>
     <div>
       <label for="message">Entre ton Message :</label>

@@ -66,3 +66,8 @@ li:last-child{
   color : var(--gold);
   padding: 10px;
 }
+
+.reserver > a{
+  color : var(--gold);
+  text-decoration: none;
+}

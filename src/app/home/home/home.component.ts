@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('prenom', { read: ElementRef }) prenom!: ElementRef;
   @ViewChild('mail', { read: ElementRef }) mail!: ElementRef;
   @ViewChild('message', { read: ElementRef }) message!: ElementRef;
+  @ViewChild('portable', { read: ElementRef }) portable!: ElementRef;
   @ViewChild('formButton', { read: ElementRef }) formButton!: ElementRef;
   @ViewChild('sendNotif', { read: ElementRef }) sendNotif!: ElementRef;
   @ViewChild('failNotif', { read: ElementRef }) failNotif!: ElementRef;
@@ -162,33 +163,51 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
     const prenom = this.prenom.nativeElement.value;
     const mail = this.mail.nativeElement.value;
     const message = this.message.nativeElement.value;
+    const portable = this.portable.nativeElement.value;
 
-    const templateParams = {
-      from_name: `${nom} ${prenom}`,
-      message: `${message} envoyé par ${mail}`
-  };
+    if(nom && prenom && mail && portable){
+      const templateParams = {
+        from_name: `${nom} ${prenom}`,
+        message: `${message}   *******************************************
+        envoyé par mail : ${mail}, numéro de téléphone : ${portable}`
+    };
 
 
 
-  emailjs.send('service_zpu9owq','template_3lq6vzn', templateParams, 'p6T7xer_3LM_gfyT2')
-    .then((response) => {
-      this.nom.nativeElement.value = '';
-      this.prenom.nativeElement.value='';
-      this.message.nativeElement.value='';
-      this.mail.nativeElement.value='';
-      this.sendNotif.nativeElement.classList.toggle('active');
-
-      setTimeout(() => {
+    emailjs.send('service_zpu9owq','template_3lq6vzn', templateParams, 'p6T7xer_3LM_gfyT2')
+      .then((response) => {
+        this.nom.nativeElement.value = '';
+        this.prenom.nativeElement.value='';
+        this.message.nativeElement.value='';
+        this.mail.nativeElement.value='';
+        this.portable.nativeElement.value='';
         this.sendNotif.nativeElement.classList.toggle('active');
 
-      }, 2000);
-    }, (err) => {
+        setTimeout(() => {
+          this.sendNotif.nativeElement.classList.toggle('active');
+
+        }, 2000);
+      }, (err) => {
+        this.failNotif.nativeElement.innerText = "Echec lors de l'envoi";
+        this.failNotif.nativeElement.classList.toggle('active');
+
+        setTimeout(() => {
+          this.failNotif.nativeElement.classList.toggle('active');
+
+        }, 2000);    });
+    }else{
+      this.failNotif.nativeElement.innerText = "Veuillez Remplir les champs obligatoires";
       this.failNotif.nativeElement.classList.toggle('active');
 
       setTimeout(() => {
         this.failNotif.nativeElement.classList.toggle('active');
+      }, 2000);
+    }
 
-      }, 2000);    });
+  }
+
+  fillForm($event : string){
+    this.message.nativeElement.value = `Bonjour, j'aimerai choisir la formule : ${$event}. Merci de me recontacter au plus vite, cordialement.`;
   }
 
   ngOnDestroy(): void {
