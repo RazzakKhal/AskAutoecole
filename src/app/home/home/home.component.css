@@ -244,7 +244,19 @@ input{
  }
  
  @media (min-width : 992px) {
- 
+  .formules{
+    background-image: url(../../../assets/images/manuel2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .formules2{
+    background-image: url(../../../assets/images/automatique2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    
+  }
  }
 
 
