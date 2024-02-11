@@ -62,3 +62,21 @@ p{
     border-top-right-radius: 50%;
     border-top-left-radius: 50%;
 }
+
+@media (min-width : 576px) {
+
+ }
+ 
+ @media (min-width : 768px) {
+   
+ }
+ 
+ @media (min-width : 992px) {
+    .container{
+      flex-direction: row;
+    }
+  
+    .section2{
+      margin-top: 150px;
+    }
+ }

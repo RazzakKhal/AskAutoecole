@@ -1,7 +1,24 @@
 
   <div #formule1 class="formule1">
     <div class="cont1">
-      <p>{{titre}}</p>
+      <p class="titre">{{titre}}</p>
+    </div>
+
+
+      <ul>
+        <li *ngFor="let point of description">
+          {{point}}
+        </li>
+      </ul>
+
+    <button (click)="fillForm()" class="reserver">
+      <a href="#ancreContact">Choisir</a>
+    </button>
+  </div>
+  
+  <div class="formule2">
+    <div class="cont1">
+      <p class="titre">{{titre}}</p>
     </div>
 
 

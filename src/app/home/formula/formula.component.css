@@ -16,6 +16,24 @@
 
 }
 
+.formule2{
+  height : 700px;
+  width : 350px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background: linear-gradient(var(--gold), var(--gold2), var(--gold3));
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+
+}
+
 
 .cont1{
   height: 10%;
@@ -75,7 +93,11 @@ li:last-child{
 
 @media (min-width : 576px) {
   .formule1{
-    min-height : 700px;
+    display: none;
+  }
+
+  .formule2{
+    display:flex;
   }
 
 

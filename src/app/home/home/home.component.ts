@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('formule1', { read: ElementRef }) formule1!: ElementRef;
   @ViewChild('formule2', { read: ElementRef }) formule2!: ElementRef;
   @ViewChild('formule3', { read: ElementRef }) formule3!: ElementRef;
-  @ViewChild('formule6', { read: ElementRef }) formule6!: ElementRef;
+  @ViewChild('formule4', { read: ElementRef }) formule4!: ElementRef;
   @ViewChild('flecheg1', { read: ElementRef }) flecheg1!: ElementRef;
   @ViewChild('flecheg2', { read: ElementRef }) flecheg2!: ElementRef;
   @ViewChild('nom', { read: ElementRef }) nom!: ElementRef;
@@ -63,10 +63,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
 
         // faire la duplication de la bonne div en fonction de divToDuplicate et changer de div à dupliquer
         if(this.divToDuplicate === 1){
-          divToAddMarge.appendChild(formule1.cloneNode(true));
+          const clonedElement = formule1.cloneNode(true);
+          const formuleTitle = clonedElement.querySelector('.titre').innerText;
+          divToAddMarge.appendChild(clonedElement);  
+          clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate = 2;
         }else if(this.divToDuplicate === 2){
-          divToAddMarge.appendChild(formule2.cloneNode(true));
+          const clonedElement = formule2.cloneNode(true);
+          const formuleTitle = clonedElement.querySelector('.titre').innerText;
+          divToAddMarge.appendChild(clonedElement);  
+          clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate = 1;
         }
 
@@ -79,16 +85,22 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   addMargeToInfinity2(){
     const divToAddMarge = this.formules2.nativeElement;
     const formule3 = this.formule3.nativeElement;
-    const formule6 = this.formule6.nativeElement;
+    const formule4 = this.formule4.nativeElement;
 
       divToAddMarge.style.right = `${this.right2}px`
 
         // faire la duplication de la bonne div en fonction de divToDuplicate et changer de div à dupliquer
         if(this.divToDuplicate2 === 1){
-          divToAddMarge.appendChild(formule3.cloneNode(true));
+          const clonedElement = formule3.cloneNode(true);
+          const formuleTitle = clonedElement.querySelector('.titre').innerText;
+          divToAddMarge.appendChild(clonedElement);  
+          clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));        
           this.divToDuplicate2 = 2;
         }else if(this.divToDuplicate2 === 2){
-          divToAddMarge.appendChild(formule6.cloneNode(true));
+          const clonedElement = formule4.cloneNode(true);
+          const formuleTitle = clonedElement.querySelector('.titre').innerText;
+          divToAddMarge.appendChild(clonedElement);  
+          clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate2 = 1;
         }
 
