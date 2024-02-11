@@ -91,22 +91,28 @@ li:last-child{
 }
 
 
-@media (min-width : 576px) {
+@media (min-width : 560px) {
   .formule1{
     display: none;
+    max-width: 45vw;
   }
 
   .formule2{
     display:flex;
+    max-width: 45vw;
+  }
+
+  .cont1{
+    max-width: 90%;
   }
 
 
  }
- 
+
  @media (min-width : 768px) {
-   
+
  }
- 
+
  @media (min-width : 992px) {
- 
+
  }
