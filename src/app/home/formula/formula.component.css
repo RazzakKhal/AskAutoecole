@@ -71,3 +71,20 @@ li:last-child{
   color : var(--gold);
   text-decoration: none;
 }
+
+
+@media (min-width : 576px) {
+  .formule1{
+    min-height : 700px;
+  }
+
+
+ }
+ 
+ @media (min-width : 768px) {
+   
+ }
+ 
+ @media (min-width : 992px) {
+ 
+ }

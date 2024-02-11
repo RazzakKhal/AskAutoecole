@@ -56,11 +56,29 @@ span{
 }
 
 @media (min-width : 576px) {
-  
+  .container{
+    background-position-y: 75%;
+  }
  }
  
  @media (min-width : 768px) {
-   
+   .ensemble1, .ensemble2{
+    display : flex;
+    padding-top: 50px;
+   }
+
+   .ensemble1 > div{
+    width : 50vw
+   }
+
+   .ensemble2 > div{
+    width : 50vw
+   }
+
+   .final{
+    margin-top: 40px;
+    text-align: center;
+   }
  }
  
  @media (min-width : 992px) {

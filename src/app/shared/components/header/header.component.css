@@ -91,5 +91,11 @@ span{
   li > a{
     font-size: 1.2em;
     letter-spacing: 2.5px;
+    transition: all ease 0.5s;
+  }
+
+  li > a:hover{
+    font-size: 1.4em;
+    letter-spacing: 5px;
   }
 }

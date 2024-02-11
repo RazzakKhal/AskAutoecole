@@ -216,7 +216,6 @@ input{
 
 .active{
   padding: 5px;
-  width : 200px;
   font-size : 1em;
   border: 1px solid black;
   transition: all ease 1s;
@@ -225,6 +224,32 @@ input{
 .fail{
   background-color: red;
 }
+
+
+@media (min-width : 576px) {
+
+  .fleched1, .fleched2, .flecheg1, .flecheg2{
+    display : none;
+  }
+
+  .formules, .formules2{
+    display : flex;
+    justify-content: space-around;
+    
+  }
+ }
+ 
+ @media (min-width : 768px) {
+   
+ }
+ 
+ @media (min-width : 992px) {
+ 
+ }
+
+
+
+
 @keyframes opaci {
   from { opacity: 0.5;
          transform : scale(1);
