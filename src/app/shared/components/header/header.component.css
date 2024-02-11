@@ -1,5 +1,5 @@
 .container{
-  height : 12vh;
+  min-height : 12vh;
   border: 1px solid;
   display : flex;
   justify-content: space-between;
@@ -13,7 +13,9 @@
   z-index: 5;
   width: 100vw;
 }
-
+.menu{
+  display: none;
+}
 .menu-hidden{
 
   display: flex;
@@ -53,4 +55,41 @@ span{
 
 .crossRotate{
   transform: rotate(45deg) translateX(12px);
+}
+
+
+@media (min-width : 576px) {
+  .menu-hidden{
+    display : none;
+  }
+
+  .ask{
+    display : none;
+  }
+  .menu{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    width : 80vw;
+    padding-right: 20px;
+
+  }
+  li > a{
+  
+      color : var(--gold3);
+      text-decoration: none;
+      font-size: 1em;
+      font-family: var(--family);
+    }  
+}
+
+@media (min-width : 768px) {
+  
+}
+
+@media (min-width : 992px) {
+  li > a{
+    font-size: 1.2em;
+    letter-spacing: 2.5px;
+  }
 }

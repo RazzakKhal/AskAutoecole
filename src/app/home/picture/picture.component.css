@@ -31,3 +31,19 @@
   border-top-left-radius: 50%;
 
 }
+
+@media (min-width : 576px) {
+ .container{
+  height : 100vh;
+  background-position-y: center;
+
+ }
+}
+
+@media (min-width : 768px) {
+  
+}
+
+@media (min-width : 992px) {
+
+}
