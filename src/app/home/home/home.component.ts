@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   @ViewChild('sendNotif', { read: ElementRef }) sendNotif!: ElementRef;
   @ViewChild('failNotif', { read: ElementRef }) failNotif!: ElementRef;
 
+   touchStartX = 0;
+   touchEndX = 0;
 
   description = ["Inscription ANTS", "Accès salle de code en illimité", "20 leçons de conduite", "Livret pédagogique dématérialisé",
   "Accompagnement à l’examen pratique de la conduite", "1140€"];
@@ -44,11 +46,18 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
   divToDuplicate2 = 1;
 
   ngOnInit(): void {
+
   }
 
 
   ngAfterViewInit(): void {
     this.appearsWithSmooth();
+    this.formules.nativeElement.addEventListener('touchstart', this.handleTouchStart);
+    this.formules.nativeElement.addEventListener('touchmove', this.handleTouchMove, false);
+    this.formules.nativeElement.addEventListener('touchend', this.handleTouchEnd, false);
+    this.formules2.nativeElement.addEventListener('touchstart', this.handleTouchStart);
+    this.formules2.nativeElement.addEventListener('touchmove', this.handleTouchMove, false);
+    this.formules2.nativeElement.addEventListener('touchend', this.handleTouchEnd, false);
   }
 
   addMargeToInfinity(){
@@ -65,13 +74,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
         if(this.divToDuplicate === 1){
           const clonedElement = formule1.cloneNode(true);
           const formuleTitle = clonedElement.querySelector('.titre').innerText;
-          divToAddMarge.appendChild(clonedElement);  
+          divToAddMarge.appendChild(clonedElement);
           clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate = 2;
         }else if(this.divToDuplicate === 2){
           const clonedElement = formule2.cloneNode(true);
           const formuleTitle = clonedElement.querySelector('.titre').innerText;
-          divToAddMarge.appendChild(clonedElement);  
+          divToAddMarge.appendChild(clonedElement);
           clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate = 1;
         }
@@ -93,13 +102,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
         if(this.divToDuplicate2 === 1){
           const clonedElement = formule3.cloneNode(true);
           const formuleTitle = clonedElement.querySelector('.titre').innerText;
-          divToAddMarge.appendChild(clonedElement);  
-          clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));        
+          divToAddMarge.appendChild(clonedElement);
+          clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate2 = 2;
         }else if(this.divToDuplicate2 === 2){
           const clonedElement = formule4.cloneNode(true);
           const formuleTitle = clonedElement.querySelector('.titre').innerText;
-          divToAddMarge.appendChild(clonedElement);  
+          divToAddMarge.appendChild(clonedElement);
           clonedElement.querySelector('.reserver').addEventListener('click', () => this.fillForm(formuleTitle));
           this.divToDuplicate2 = 1;
         }
@@ -143,6 +152,31 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
     this.addMargeToInfinity2();
   }
   }
+
+  /**
+   * implémentation du swipe
+   */
+
+
+ handleTouchStart(evt : any) {
+  this.touchStartX = evt.touches[0].clientX;
+}
+
+ handleTouchMove(evt : any) {
+  this.touchEndX = evt.touches[0].clientX;
+}
+
+ handleTouchEnd() {
+  if (this.touchStartX - this.touchEndX > 50) {
+    // Swipe vers la gauche
+    this.goToNextFormule();
+  } else if (this.touchStartX - this.touchEndX < -50) {
+    // Swipe vers la droite
+    this.goToPreviousFormule();
+  }
+}
+
+
 
   /**
    * méthode qui permettra de faire apparaitre les formules + les photo de manière smooth
