@@ -52,12 +52,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
 
   ngAfterViewInit(): void {
     this.appearsWithSmooth();
-    this.formules.nativeElement.addEventListener('touchstart', this.handleTouchStart);
-    this.formules.nativeElement.addEventListener('touchmove', this.handleTouchMove, false);
-    this.formules.nativeElement.addEventListener('touchend', this.handleTouchEnd, false);
-    this.formules2.nativeElement.addEventListener('touchstart', this.handleTouchStart);
-    this.formules2.nativeElement.addEventListener('touchmove', this.handleTouchMove, false);
-    this.formules2.nativeElement.addEventListener('touchend', this.handleTouchEnd, false);
+    this.formules.nativeElement.addEventListener('touchmove', this.goToNextFormule);
+    this.formules2.nativeElement.addEventListener('touchmove', this.goToNextFormule2);
   }
 
   addMargeToInfinity(){
@@ -175,6 +171,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy{
     this.goToPreviousFormule();
   }
 }
+
+handleTouchEnd2() {
+  if (this.touchStartX - this.touchEndX > 50) {
+    // Swipe vers la gauche
+    this.goToNextFormule2();
+  } else if (this.touchStartX - this.touchEndX < -50) {
+    // Swipe vers la droite
+    this.goToPreviousFormule2();
+  }
+}
+
 
 
 

@@ -237,7 +237,7 @@ input{
   .formules, .formules2{
     display : flex;
     justify-content: space-around;
-    
+    right: 0px !important;
   }
  }
  
